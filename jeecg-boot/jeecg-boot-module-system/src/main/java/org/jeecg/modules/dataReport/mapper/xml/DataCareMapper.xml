@@ -121,7 +121,15 @@
 				ORDER BY
 				predate DESC
 				) ttt
-				LEFT JOIN task_milestone ttt4 ON ttt.bolcode = ttt4.tm_mblno
+				LEFT JOIN (
+					SELECT
+						MAX (TASK.TM_ODATE) AS TM_ODATE,
+						TASK.TM_MBLNO
+					FROM
+						task_milestone task
+					GROUP BY
+						TM_MBLNO
+				) ttt4 ON ttt.bolcode = ttt4.tm_mblno
 				LEFT JOIN ccode ttt5 ON ttt.ARAPCCODE = ttt5.ccode
 				LEFT JOIN wcode ttt6 ON ttt.WCODE = ttt6.wcode
 				WHERE
@@ -171,7 +179,7 @@
 					AND t1.erp_order_id IS NOT NULL
 					AND t1.order_source = 2
 
-				) tt
+				) ttrules
 
 	</select>
 </mapper>

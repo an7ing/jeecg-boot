@@ -55,9 +55,12 @@ export const JeecgListMixin = {
     }
   },
   created() {
-    this.loadData();
-    //初始化字典配置 在自己页面定义
-    this.initDictConfig();
+    if(!this.disableMixinCreated){
+      console.log(' -- mixin created -- ')
+      this.loadData();
+      //初始化字典配置 在自己页面定义
+      this.initDictConfig();
+    }
   },
   methods:{
     moment,
@@ -204,6 +207,7 @@ export const JeecgListMixin = {
           title: "确认删除",
           content: "是否删除选中数据?",
           onOk: function () {
+            that.loading = true;
             deleteAction(that.url.deleteBatch, {ids: ids}).then((res) => {
               if (res.success) {
                 that.$message.success(res.message);
@@ -212,6 +216,8 @@ export const JeecgListMixin = {
               } else {
                 that.$message.warning(res.message);
               }
+            }).finally(() => {
+              that.loading = false;
             });
           }
         });

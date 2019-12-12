@@ -6,6 +6,7 @@ server:
     context-path: /jeecg-boot
     compression:
       enabled: true
+      min-response-size: 1024
       mime-types: application/javascript,application/json,application/xml,text/html,text/xml,text/plain,text/css,image/*
 
 management:
@@ -166,18 +167,17 @@ jeecg :
      excludeUrls: /test/jeecgDemo/demo3,/test/jeecgDemo/redisDemo/**
   #阿里云oss存储配置
   oss:
-    type: aliyun
     endpoint: oss-cn-beijing.aliyuncs.com
-    accessKey: ??
+    accessKey: WegDpuKzOuPK6D3N
     secretKey: ??
     bucketName: jeecgos
-    properties:
-      aliyun:
-        protocol: https
+    staticDomain: ??
+
   # ElasticSearch 设置
   elasticsearch:
-    cluster-name: my-application
+    cluster-name: jeecg-ES
     cluster-nodes: 127.0.0.1:9200
+
 #  #腾讯云cos存储配置
 #  oss:
 #    type: qc
