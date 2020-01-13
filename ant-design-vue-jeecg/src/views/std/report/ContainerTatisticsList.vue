@@ -27,7 +27,7 @@
                 @change="onDateChange"
                 :disabledDate="disabledDate"
                 :format="dateFormat"
-                :allowClear="false" >
+                :allowClear="true" >
                 <a-icon slot="suffixIcon" type="clock-circle" theme="twoTone" v-model="queryParam.customsReleaseDate"/>
               </a-range-picker>
             </a-form-item>

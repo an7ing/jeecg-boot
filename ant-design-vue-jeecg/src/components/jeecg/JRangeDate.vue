@@ -7,7 +7,7 @@
     :ranges="{ 昨天: [moment().subtract(1,'day'), moment().endOf('day')], '本月': [moment().startOf('month'), moment().startOf('day') ],  '上月': [moment().month(moment().month() - 1).startOf('month'), moment().month(moment().month() - 1).endOf('month') ] ,  '上上月': [moment().month(moment().month() - 2).startOf('month'), moment().month(moment().month() - 2).endOf('month') ]}"
     :showTime="showTime"
     :format="dateFormat"
-    :allowClear="false"
+    :allowClear="true"
     :getCalendarContainer="getCalendarContainer"
   />
 </template>
@@ -79,7 +79,13 @@
         debugger
         if(val.length === 0){
           this.momVal = null
-        }else{
+        }
+        else if (val[0] === '') {
+
+          this.momVal = null
+
+        }
+        else {
           // this.momVal = moment(val,this.dateFormat)
           this.momVal = [moment(val[0]), moment(val[1])]
         }

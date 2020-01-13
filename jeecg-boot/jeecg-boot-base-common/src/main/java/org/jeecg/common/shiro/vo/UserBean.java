@@ -1,8 +1,9 @@
-package org.jeecg.modules.shiro.vo;
+package org.jeecg.common.shiro.vo;
+
+import lombok.Data;
 
 import java.util.HashSet;
 import java.util.Set;
-import lombok.Data;
 
 @Data
 public class UserBean {

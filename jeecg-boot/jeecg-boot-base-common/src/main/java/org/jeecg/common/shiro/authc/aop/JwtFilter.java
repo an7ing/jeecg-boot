@@ -1,16 +1,17 @@
-package org.jeecg.modules.shiro.authc.aop;
+package org.jeecg.common.shiro.authc.aop;
+
+import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
+import org.jeecg.common.shiro.authc.JwtToken;
+import org.jeecg.common.shiro.vo.DefContants;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
-import org.jeecg.modules.shiro.authc.JwtToken;
-import org.jeecg.modules.shiro.vo.DefContants;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestMethod;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @Description: 鉴权登录拦截器

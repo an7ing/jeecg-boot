@@ -135,7 +135,7 @@ export const JeecgListMixin = {
       for ( let p in param) {
         if (param[p] instanceof Array ){
           //若参数名中包含 Date日期字符串
-          if (p.includes('Date') && param[p].length > 0) {
+          if ((p.includes('Date') || p.includes('date'))  && param[p].length > 0) {
             //将数组日期进行拆分并进行 日期区间赋值
             let datebegin = p + "_begin";
             let dateEnd = p + "_end";

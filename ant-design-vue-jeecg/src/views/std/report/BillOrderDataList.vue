@@ -401,6 +401,12 @@
   .ant-btn {
     margin-left: 5px
   }
+    ant-table :global {
+      color: rgba(0,0,0,1) !important;
+    }
+
+
+
 
 
   .clickRowStyl {
@@ -410,5 +416,6 @@
   .ant-table-tbody > .clickRowStyl:hover > td {
     background-color: #ed9e9b
   }
+  @import '~@assets/less/common.less'
 
 </style>

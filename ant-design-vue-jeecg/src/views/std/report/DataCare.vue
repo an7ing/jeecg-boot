@@ -585,6 +585,7 @@
   }
 </script>
 <style scoped>
+
   .ant-card-body .table-operator {
     margin-bottom: 18px;
   }
@@ -635,4 +636,6 @@
     text-align: center;
     font-size: 20px;
   }
+
+  @import '~@assets/less/common.less'
 </style>
