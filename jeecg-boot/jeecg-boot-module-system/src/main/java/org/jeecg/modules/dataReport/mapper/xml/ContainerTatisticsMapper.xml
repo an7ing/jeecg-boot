@@ -6,6 +6,7 @@
 
 
         SELECT
+        t2.eirno,
         t1.order_id,
         t1.bl_no AS blNo,
         t1.customs_release_date AS customs_release_date,

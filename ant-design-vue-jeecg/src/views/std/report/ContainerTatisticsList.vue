@@ -13,6 +13,12 @@
             </a-form-item>
           </a-col>
           <a-col :md="4" :sm="8">
+            <a-form-item label="EIR号">
+              <a-input placeholder="请输入EIR号"
+                       v-model="queryParam.eirnoQuery"></a-input>
+            </a-form-item>
+          </a-col>
+          <a-col :md="4" :sm="8">
             <a-form-item label="箱号（柜号）">
               <a-input placeholder="请输入箱号（柜号）"
                        v-model="queryParam.containerNoQuery"></a-input>
@@ -238,6 +244,7 @@
           customsReleaseDate: [moment(moment().startOf('month')), moment(moment().startOf('day'))],
           containerNoQuery: '',
           ieDate: [],
+          eirnoQuery: '',
           mtOutdate: [],
           dcOutdate: [],
           dcIndate: [],
@@ -276,6 +283,12 @@
             //
             // },
             // scopedSlots: {customRender: 'blNo'},
+          },
+          {
+            title: 'EIR',
+            align: "center",
+            sorter: true,
+            dataIndex: 'eirno'
           },
           {
             title: '海关放行',
@@ -525,6 +538,7 @@
         var that = this;
         this.queryParam = {
           bolcodeQuery: '',
+          eirnoQuery:'',
           customsReleaseDate: [],
           containerNoQuery: ''
         }; //清空查询区域参数

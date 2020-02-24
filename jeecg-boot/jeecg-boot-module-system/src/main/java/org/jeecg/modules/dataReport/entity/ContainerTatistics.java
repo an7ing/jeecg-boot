@@ -37,6 +37,14 @@ public class ContainerTatistics {
 	@Excel(name = "提单号", width = 15)
     @ApiModelProperty(value = "提单号")
 	private String blNo;
+
+	/**EIR号*/
+	@Excel(name = "EIR", width = 15)
+	@ApiModelProperty(value = "EIR")
+	private String eirno;
+
+
+
 	/**海关放行日期*/
 	@Excel(name = "海关放行日期", width = 15, format = "yyyy-MM-dd")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")

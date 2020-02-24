@@ -81,6 +81,10 @@ public class ContainerTatisticsController {
         if (oConvertUtils.isNotEmpty(containerNo)) {
             queryWrapper.like("t.container_no", containerNo);
         }
+        String eirno = req.getParameter("eirnoQuery");
+        if (oConvertUtils.isNotEmpty(eirno)) {
+            queryWrapper.like("t2.eirno", eirno);
+        }
         System.out.println(queryWrapper.getSqlSegment());//打印前端自带的查询where后的条件
         Page<ContainerTatistics> page = new Page<ContainerTatistics>(pageNo, pageSize);
         IPage<ContainerTatistics> pageList = containerTatisticsService.getContainerTatistics(page, queryWrapper);

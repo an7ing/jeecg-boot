@@ -201,7 +201,8 @@ public class ${entityName}Controller {
       //导出文件名称
       mv.addObject(NormalExcelConstants.FILE_NAME, "${tableVo.ftlDescription}列表");
       mv.addObject(NormalExcelConstants.CLASS, ${entityName}.class);
-      mv.addObject(NormalExcelConstants.PARAMS, new ExportParams("${tableVo.ftlDescription}列表数据", "导出人:Jeecg", "导出信息"));
+      String username = JwtUtil.getUserNameByToken(request);
+      mv.addObject(NormalExcelConstants.PARAMS, new ExportParams("${tableVo.ftlDescription}列表数据", "导出人:" + username, "导出信息"));
       mv.addObject(NormalExcelConstants.DATA_LIST, pageList);
       return mv;
   }

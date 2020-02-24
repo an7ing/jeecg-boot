@@ -47,8 +47,8 @@ import io.swagger.annotations.ApiOperation;
 @Slf4j
 @Api(tags="业务接单提单数据")
 @RestController
-@RequestMapping("/org.jeecg.modules.dataReport/billOrderData")
-public class BillOrderDataController {
+@RequestMapping("/dataReport/billOrderData")
+public class  BillOrderDataController {
 	@Autowired
 	private IBillOrderDataService billOrderDataService;
 

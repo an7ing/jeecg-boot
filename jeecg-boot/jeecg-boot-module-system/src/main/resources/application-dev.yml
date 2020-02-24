@@ -164,7 +164,7 @@ jeecg :
      accessKeyId: ??
      accessKeySecret: ??
   shiro:
-     excludeUrls: /test/jeecgDemo/demo3,/test/jeecgDemo/redisDemo/**
+     excludeUrls: /test/jeecgDemo/demo3,/test/jeecgDemo/redisDemo/**,
   #阿里云oss存储配置
   oss:
     endpoint: oss-cn-beijing.aliyuncs.com
@@ -177,6 +177,12 @@ jeecg :
   elasticsearch:
     cluster-name: jeecg-ES
     cluster-nodes: 127.0.0.1:9200
+  # 表单设计器配置
+  desform:
+    # 主题颜色（仅支持 16进制颜色代码）
+    theme-color: "#1890ff"
+  # 在线预览文件服务器地址配置
+  file-view-domain: http://127.0.0.1:8012
 
 #  #腾讯云cos存储配置
 #  oss:

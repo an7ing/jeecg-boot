@@ -49,6 +49,7 @@ public class TestWebController {
     @GetMapping("/article")
     public ResponseBean article() {
         Subject subject = SecurityUtils.getSubject();
+//        String username = JwtUtil.getUserNameByToken();
         if (subject.isAuthenticated()) {
             return new ResponseBean(200, "You are already logged in", null);
         } else {

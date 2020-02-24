@@ -41,7 +41,8 @@ export function getInfo() {
     url: '/api/user/info',
     method: 'get',
     headers: {
-      'application/x-www-form-urlencoded;charset=UTF-8'
+      'Content-Type': 'application/json;charset=UTF-8'
+      // 'application/x-www-form-urlencoded;charset=UTF-8',
     }
   })
 }
