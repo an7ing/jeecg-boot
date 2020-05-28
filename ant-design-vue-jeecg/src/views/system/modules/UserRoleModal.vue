@@ -169,7 +169,7 @@
               this.checkedKeys = [...res.result];
               this.defaultCheckedKeys = [...res.result];
               this.expandedKeysss = this.allTreeKeys;
-              //console.log(this.defaultCheckedKeys)
+              console.log(this.defaultCheckedKeys)
           })
         })
       }
@@ -184,7 +184,7 @@
   }
 
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
   .drawer-bootom-button {
     position: absolute;
     bottom: 0;
